@@ -35,7 +35,7 @@ public class DoacaoController {
        return ResponseEntity.ok(doacaoService.listarDoacoes());
     }
 
-    @PutMapping("/{id}") /*atualizar status doação
+    @PutMapping("/{id}") /*atualizar status doação*/
     public ResponseEntity<Doacao> atualizarDoacao(@PathVariable Integer id, @RequestBody Doacao doacaoAtualizada){
         return doacaoService.atualizarDoacao(id, doacaoAtualizada)
                 .map(ResponseEntity::ok)

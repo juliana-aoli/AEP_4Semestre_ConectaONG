@@ -10,11 +10,8 @@ import lombok.EqualsAndHashCode;
 @Table(name = "doador")
 public class Doador extends Usuario{
 
+    @Column(name = "nome_responsavel", length = 100)
     private String nomeResponsavel;
-
-    private Doador(){
-
-    }
 
     @Override
     public String exibirResumo(){
