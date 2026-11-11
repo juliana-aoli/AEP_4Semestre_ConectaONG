@@ -1,3 +1,4 @@
+
 package com.conectaong.model;
 
 import jakarta.persistence.*;
@@ -8,9 +9,13 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "entidade_beneficente")
+@AttributeOverride(
+        name = "id",
+        column = @Column(name = "id_entidade")
+)
 public class EntidadeBeneficente extends Usuario {
 
-    @Column(name = "nome_responsavel_tecnico", length = 100)
+    @Column(name = "responsavel_tecnico", length = 100)
     private String nomeResponsavelTecnico;
 
     @Override

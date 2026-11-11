@@ -1,3 +1,4 @@
+
 package com.conectaong.model;
 
 import jakarta.persistence.*;
@@ -13,10 +14,10 @@ public class ItemDoacao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_item_doacao")
+    @Column(name = "id_item")
     private Integer idItemDoacao;
 
-    @Column(name = "descricao", length = 255)
+    @Column(name = "descricao_alimento", length = 150)
     private String descricao;
 
     @Column(name = "categoria", length = 100)
@@ -25,7 +26,7 @@ public class ItemDoacao {
     @Column(name = "quantidade", precision = 10, scale = 2)
     private BigDecimal quantidade;
 
-    @Column(name = "unidade_medida", length = 20)
+    @Column(name = "unidade_medida", length = 60)
     private String unidadeMedida;
 
     @Column(name = "data_validade")

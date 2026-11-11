@@ -1,3 +1,4 @@
+
 package com.conectaong.model;
 
 import jakarta.persistence.*;
@@ -8,14 +9,18 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "doador")
-public class Doador extends Usuario{
+@AttributeOverride(
+        name = "id",
+        column = @Column(name = "id_doador")
+)
+public class Doador extends Usuario {
 
     @Column(name = "nome_responsavel", length = 100)
     private String nomeResponsavel;
 
     @Override
-    public String exibirResumo(){
-        return "Doador: " + getNomeFantasia() + " | Responsável: " + nomeResponsavel;
+    public String exibirResumo() {
+        return "Doador: " + getNomeFantasia()
+                + " | Responsável: " + nomeResponsavel;
     }
-
 }
